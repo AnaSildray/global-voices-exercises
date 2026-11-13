@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Voices - Exercises & Practice</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .perspective-1000 { perspective: 1000px; }
+        .transform-style-3d { transform-style: preserve-3d; }
+        .backface-hidden { backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen p-6 md:p-12">
+
+    <div class="max-w-7xl mx-auto">
+        <!-- Encabezado de la Sección -->
+        <header class="text-center mb-12">
+            <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Interactive Learning Modules</span>
+            <h1 class="text-3xl md:text-5xl font-ext500 font-bold text-slate-900 mt-3 mb-4">Exercises & Practical Quests</h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                Explora nuestras 3 misiones interculturales diseñadas para fortalecer tus habilidades comunicativas en inglés[cite: 4] y accede al recurso gamificado de la Fase 2[cite: 7, 14].
+            </p>
+        </header>
+
+        <!-- Cuadrícula 2x2 de Ejercicios -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- CUADRITO 1: Activity 1 – Stereotype Hunter -->
+            <div class="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col overflow-hidden transition hover:shadow-2xl">
+                <div class="bg-indigo-600 p-6 text-white">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="bg-indigo-500 text-xs font-bold px-2.5 py-1 rounded">Activity 1</span>
+                        <span class="text-xs bg-indigo-700 px-2.5 py-1 rounded">Reading & Writing</span>
+                    </div>
+                    <h2 class="text-2xl font-bold">Cazador de Estereotipos</h2>
+                    <p class="text-indigo-100 text-sm mt-1">Análisis Crítico del Discurso en Medios Digitales</p>
+                </div>
+                
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="mb-4">
+                            <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide mb-2"><i class="fas fa-list-ol text-indigo-600 mr-2"></i>Instrucciones:</h3>
+                            <ol class="list-decimal list-inside text-sm text-slate-600 space-y-1">
+                                <li>Explora la galería visual de 3 campañas publicitarias y 2 titulares periodísticos[cite: 4].</li>
+                                <li>Identifica adjetivos o frases con estereotipos de género, raza o nacionalidad[cite: 4].</li>
+                                <li>Clasifícalos como "Stereotype" o "Inclusive" y propón una reescritura respetuosa[cite: 4].</li>
+                            </ol>
+                        </div>
+
+                        <!-- Apoyo Visual: Flashcard interactiva -->
+                        <div class="mb-6 bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+                            <span class="text-xs font-bold text-indigo-700 block mb-1"><i class="fas fa-lightbulb mr-1"></i> Apoyo Visual: Lenguaje Inclusivo</span>
+                            <p class="text-xs text-slate-600 mb-2">Pasa el mouse o haz clic para ver el cambio de sesgo a inclusión:</p>
+                            <div class="bg-white p-3 rounded-lg border border-indigo-200 text-sm text-indigo-900 font-medium cursor-pointer transition hover:bg-indigo-100" onclick="alert('Ejemplo: Cambiar \'The cleaning lady always does it\' por \'The sanitation professional performs the task efficiently\'.')">
+                                🔄 <em>"Bossy woman"</em> ➔ <strong>"Assertive leader"</strong> (Haz clic para ver más)
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openActivity1()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md">
+                        <i class="fas fa-gamepad mr-2"></i> Iniciar Actividad 1 (+15 pts)
+                    </button>
+                </div>
+            </div>
+
+            <!-- CUADRITO 2: Activity 2 – Global Accents & Listening Quest -->
+            <div class="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col overflow-hidden transition hover:shadow-2xl">
+                <div class="bg-sky-600 p-6 text-white">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="bg-sky-500 text-xs font-bold px-2.5 py-1 rounded">Activity 2</span>
+                        <span class="text-xs bg-sky-700 px-2.5 py-1 rounded">Listening & Inference</span>
+                    </div>
+                    <h2 class="text-2xl font-bold">Acentos Globales y Búsqueda Auditiva</h2>
+                    <p class="text-sky-100 text-sm mt-1">Comprensión de Variaciones Lingüísticas</p>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="mb-4">
+                            <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide mb-2"><i class="fas fa-list-ol text-sky-600 mr-2"></i>Instrucciones:</h3>
+                            <ol class="list-decimal list-inside text-sm text-slate-600 space-y-1">
+                                <li>Selecciona una región en el mapa interactivo (India, Nigeria, comunidades indígenas)[cite: 3, 4].</li>
+                                <li>Escucha la grabación de audio de un hablante no nativo explicando una tradición[cite: 3, 4].</li>
+                                <li>Responde preguntas abiertas e infiere significados a partir del contexto[cite: 4, 5].</li>
+                            </ol>
+                        </div>
+
+                        <!-- Apoyo Visual: Infografía de Acentos -->
+                        <div class="mb-6 bg-sky-50 p-4 rounded-xl border border-sky-100">
+                            <span class="text-xs font-bold text-sky-700 block mb-1"><i class="fas fa-globe mr-1"></i> Apoyo Visual: English as a Lingua Franca</span>
+                            <div class="text-xs text-slate-600 bg-white p-2.5 rounded border border-sky-200">
+                                🌐 <strong>Nota:</strong> Los acentos no nativos son legítimos y enriquecedores. La meta es la comunicación efectiva, no la imitación de un acento idealizado[cite: 1, 3, 5].
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openActivity2()" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md">
+                        <i class="fas fa-headphones mr-2"></i> Abrir Mapa de Acentos
+                    </button>
+                </div>
+            </div>
+
+            <!-- CUADRITO 3: Activity 3 – Cultural Mediator Role-Play -->
+            <div class="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col overflow-hidden transition hover:shadow-2xl">
+                <div class="bg-amber-600 p-6 text-white">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="bg-amber-500 text-xs font-bold px-2.5 py-1 rounded">Activity 3</span>
+                        <span class="text-xs bg-amber-700 px-2.5 py-1 rounded">Speaking & Pragmatics</span>
+                    </div>
+                    <h2 class="text-2xl font-bold">Juego de Roles como Mediador Cultural</h2>
+                    <p class="text-amber-100 text-sm mt-1">Negociación y Resolución de Conflictos</p>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="mb-4">
+                            <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide mb-2"><i class="fas fa-list-ol text-amber-600 mr-2"></i>Instrucciones:</h3>
+                            <ol class="list-decimal list-inside text-sm text-slate-600 space-y-1">
+                                <li>Ingresa a la simulación digital de un equipo multicultural en un entorno internacional[cite: 1, 5].</li>
+                                <li>Analiza un choque cultural causado por estilos de comunicación (directo vs. indirecto)[cite: 5].</li>
+                                <li>Asume el rol de mediador seleccionando respuestas asertivas y usando verbos modales de cortesía[cite: 5].</li>
+                            </ol>
+                        </div>
+
+                        <!-- Apoyo Visual: Flashcards Pragmáticas -->
+                        <div class="mb-6 bg-amber-50 p-4 rounded-xl border border-amber-100">
+                            <span class="text-xs font-bold text-amber-700 block mb-1"><i class="fas fa-comments mr-1"></i> Apoyo Visual: Politeness Modals</span>
+                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-700">
+                                <div class="bg-white p-2 rounded border border-amber-200">❌ <em>"Do this now!"</em></div>
+                                <div class="bg-white p-2 rounded border border-amber-200">✔️ <em>"Could you please..."</em>[cite: 5]</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openActivity3()" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md">
+                        <i class="fas fa-users mr-2"></i> Iniciar Simulación de Mediación
+                    </button>
+                </div>
+            </div>
+
+            <!-- CUADRITO 4: Phase 2 Resource – Healthy Lifestyles & Well-being -->
+            <div class="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col overflow-hidden transition hover:shadow-2xl">
+                <div class="bg-emerald-600 p-6 text-white">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="bg-emerald-500 text-xs font-bold px-2.5 py-1 rounded">Phase 2 Resource</span>
+                        <span class="text-xs bg-emerald-700 px-2.5 py-1 rounded">Genially & LearningApps</span>
+                    </div>
+                    <h2 class="text-2xl font-bold">Healthy Lifestyles & Emotional Well-being</h2>
+                    <p class="text-emerald-100 text-sm mt-1">Recurso Gamificado y UDL[cite: 9, 14]</p>
+                </div>
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="mb-4">
+                            <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide mb-2"><i class="fas fa-list-ol text-emerald-600 mr-2"></i>Instrucciones:</h3>
+                            <ol class="list-decimal list-inside text-sm text-slate-600 space-y-1">
+                                <li>Haz clic en el botón de abajo para entrar al tablero interactivo en Genially[cite: 14].</li>
+                                <li>Completa los retos de secuencia auditiva (*First, Next, Then, Finally*)[cite: 11].</li>
+                                <li>Desarrolla las actividades complementarias de emparejamiento y cuestionarios de rutinas saludables[cite: 11, 12, 13].</li>
+                            </ol>
+                        </div>
+
+                        <!-- Enlaces directos incrustados -->
+                        <div class="mb-6 bg-emerald-50 p-4 rounded-xl border border-emerald-100 space-y-2">
+                            <span class="text-xs font-bold text-emerald-700 block"><i class="fas fa-link mr-1"></i> Enlaces Directos del Proyecto:</span>
+                            <div class="flex flex-col space-y-1 text-xs">
+                                <a href="https://view.genially.com/6aale3a9033920c85a6fa223" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center"><i class="fas fa-external-link-alt mr-1"></i> Recurso Gamificado (Genially)[cite: 14]</a>
+                                <a href="https://view.genially.com/6aa466ad322078f1de1afd36" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center"><i class="fas fa-external-link-alt mr-1"></i> Matriz de Programación (Genially)[cite: 10]</a>
+                                <a href="https://learningapps.org/watch?v=phzrctn5n26" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center"><i class="fas fa-external-link-alt mr-1"></i> Práctica LearningApps (Listening)[cite: 13]</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://view.genially.com/6aale3a9033920c85a6fa223" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md text-center">
+                        <i class="fas fa-rocket mr-2"></i> Lanzar Recurso Gamificado Principal
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script sencillo para interactividad de prueba en los botones -->
+    <script>
+        function openActivity1() {
+            alert("¡Bienvenido a Activity 1: Cazador de Estereotipos!\n\nAquí analizarás campañas publicitarias reales para identificar sesgos de género o raza y reescribirlas de forma inclusiva.");
+        }
+        function openActivity2() {
+            alert("¡Bienvenido a Activity 2: Acentos Globales!\n\nExplorando el mapa auditivo para escuchar hablantes no nativos y responder preguntas de comprensión contextual.");
+        }
+        function openActivity3() {
+            alert("¡Bienvenido a Activity 3: Mediador Cultural!\n\nIniciando simulación de diálogo internacional. Tus decisiones de cortesía afectarán el clima del equipo.");
+        }
+    </script>
+</body>
+</html>
