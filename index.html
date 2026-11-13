@@ -3,229 +3,450 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Voices - Exercises & Practice</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Global Voices - Exercises & Practical Quests</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Fredoka & Nunito -->
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #FDFBF7;
+            color: #1E293B;
+        }
+        h1, h2, h3, .font-illustrated {
+            font-family: 'Fredoka', sans-serif;
+        }
+        /* Flashcard 3D Flip Effect */
+        .flashcard-inner {
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+        .flashcard.flipped .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+        .flashcard-front, .flashcard-back {
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+        }
+        .flashcard-back {
+            transform: rotateY(180deg);
+        }
+    </style>
 </head>
-<body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen p-6 md:p-12">
+<body class="min-h-screen flex flex-col p-4 sm:p-8">
 
-    <div class="max-w-7xl mx-auto">
-        <!-- Encabezado de la Sección -->
-        <header class="text-center mb-12">
-            <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Interactive Learning Modules</span>
-            <h1 class="text-3xl md:text-5xl font-bold text-slate-900 mt-3 mb-4">Exercises & Practical Quests</h1>
-            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-                Explora nuestras 3 misiones interculturales diseñadas para fortalecer tus habilidades comunicativas en inglés y accede al recurso gamificado.
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <main class="max-w-7xl w-full mx-auto space-y-8">
+        <!-- Encabezado de la Sección de Ejercicios -->
+        <div class="text-center max-w-3xl mx-auto space-y-2">
+            <span class="inline-block px-4 py-1 rounded-full bg-teal-100 text-teal-800 text-xs font-extrabold uppercase tracking-wider">
+                Interactive Learning Modules
+            </span>
+            <h1 class="text-3xl sm:text-4xl font-bold text-blue-950">
+                Exercises & Intercultural Quests
+            </h1>
+            <p class="text-slate-600 text-sm sm:text-base">
+                Each module targets a specific communicative skill in English, opening with clear step-by-step instructions and visual support tools (flip flashcards, infographics, and interactive maps).
             </p>
-        </header>
+        </div>
 
-        <!-- Cuadrícula 2x2 de Ejercicios -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <!-- 2x2 GRID (3 ACTIVITIES + 1 PHASE 2 RESOURCE) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
 
-            <!-- CUADRITO 1: Activity 1 – Stereotype Hunter -->
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col overflow-hidden transition hover:shadow-2xl">
-                <div class="bg-indigo-600 p-6 text-white">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="bg-indigo-500 text-xs font-bold px-2.5 py-1 rounded">Activity 1</span>
-                        <span class="text-xs bg-indigo-700 px-2.5 py-1 rounded">Reading & Writing</span>
+            <!-- ===================================================== -->
+            <!-- CARD 1: ACTIVITY 1 – STEREOTYPE HUNTER -->
+            <!-- ===================================================== -->
+            <article class="bg-white rounded-[2rem] border-2 border-rose-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition-all">
+                <div>
+                    <div class="bg-gradient-to-r from-rose-500 to-pink-600 p-6 text-white">
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-white/20 text-xs font-extrabold">
+                                Activity 1 • Critical Literacy
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-blue-950/30 text-xs font-bold">
+                                <i class="fa-solid fa-book-open-reader mr-1"></i> Reading & Writing
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Activity 1 – Stereotype Hunter</h3>
                     </div>
-                    <h2 class="text-2xl font-bold">Cazador de Estereotipos</h2>
-                    <p class="text-indigo-100 text-sm mt-1">Análisis Crítico del Discurso en Medios Digitales</p>
-                </div>
-                
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="mb-4">
-                            <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide mb-2"><i class="fas fa-list-ol text-indigo-600 mr-2"></i>Instrucciones:</h3>
-                            <ol class="list-decimal list-inside text-sm text-slate-600 space-y-1">
-                                <li>Explora la galería visual de campañas publicitarias y titulares.</li>
-                                <li>Identifica adjetivos o frases con estereotipos de género o raza.</li>
-                                <li>Clasifícalos y propón una reescritura inclusiva.</li>
+
+                    <div class="p-6 space-y-5">
+                        <!-- Instrucciones -->
+                        <div class="bg-rose-50 border border-rose-200 rounded-2xl p-4 space-y-1.5">
+                            <h4 class="text-xs font-extrabold uppercase tracking-wider text-rose-800 flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-info"></i> Instructions
+                            </h4>
+                            <ol class="text-xs sm:text-sm text-slate-700 space-y-1 list-decimal pl-4 font-medium">
+                                <li>Flip the <strong>Visual Flashcards</strong> below to compare biased phrases with inclusive alternatives.</li>
+                                <li>Launch the interactive workshop to read international ad campaigns and news headlines in English.</li>
+                                <li>Click on biased words, classify each sentence, and write an inclusive rewrite.</li>
                             </ol>
                         </div>
-                        <div class="mb-6 bg-indigo-50 p-4 rounded-xl border border-indigo-100">
-                            <span class="text-xs font-bold text-indigo-700 block mb-1"><i class="fas fa-lightbulb mr-1"></i> Apoyo Visual: Lenguaje Inclusivo</span>
-                            <p class="text-xs text-slate-600">🔄 <em>"Bossy woman"</em> ➔ <strong>"Assertive leader"</strong></p>
+
+                        <!-- Apoyo Visual: Flip Flashcards -->
+                        <div class="space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-extrabold text-slate-600 uppercase tracking-wider">
+                                    <i class="fa-solid fa-clone text-rose-500 mr-1"></i> Biased Language vs. Inclusive Language
+                                </span>
+                                <button onclick="nextCard1Flashcard()" class="text-xs font-bold text-rose-600 hover:underline cursor-pointer">
+                                    Next Card <i class="fa-solid fa-rotate ml-1"></i>
+                                </button>
+                            </div>
+                            <div id="fc1-container" onclick="this.classList.toggle('flipped')" class="flashcard h-32 w-full">
+                                <div class="flashcard-inner relative w-full h-full">
+                                    <div class="flashcard-front absolute inset-0 rounded-2xl bg-blue-950 text-white p-4 flex flex-col justify-center items-center text-center border-2 border-blue-800">
+                                        <span class="text-[10px] uppercase tracking-widest text-rose-300 font-extrabold mb-1">Biased / Stereotyped Expression</span>
+                                        <p id="fc1-front-text" class="font-bold text-sm sm:text-base">"Exotic tribal workers are naturally submissive."</p>
+                                        <span class="text-[11px] text-blue-200 mt-1.5"><i class="fa-solid fa-hand-pointer mr-1"></i>Click to flip for inclusive rewrite</span>
+                                    </div>
+                                    <div class="flashcard-back absolute inset-0 rounded-2xl bg-teal-600 text-white p-4 flex flex-col justify-center items-center text-center border-2 border-teal-400">
+                                        <span class="text-[10px] uppercase tracking-widest text-amber-200 font-extrabold mb-1">Inclusive & Respectful Language</span>
+                                        <p id="fc1-back-text" class="font-bold text-sm sm:text-base">"Indigenous artisans bring rich heritage and skilled craftsmanship."</p>
+                                        <span class="text-[11px] text-teal-100 mt-1">Respectful wording free of cultural generalizations.</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <button onclick="openModal('modal1')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md cursor-pointer">
-                        <i class="fas fa-gamepad mr-2"></i> Iniciar Actividad 1
+                <div class="px-6 pb-6">
+                    <button onclick="openModal('modal-act1')" class="w-full py-3.5 px-5 rounded-2xl bg-rose-500 hover:bg-rose-600 text-white font-extrabold text-sm shadow-sm border-b-4 border-rose-700 active:border-b-0 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-magnifying-glass"></i> Launch Interactive Activity
                     </button>
                 </div>
-            </div>
+            </article>
 
-            <!-- CUADRITO 2: Activity 2 – Global Accents -->
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col overflow-hidden transition hover:shadow-2xl">
-                <div class="bg-sky-600 p-6 text-white">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="bg-sky-500 text-xs font-bold px-2.5 py-1 rounded">Activity 2</span>
-                        <span class="text-xs bg-sky-700 px-2.5 py-1 rounded">Listening & Inference</span>
+            <!-- ===================================================== -->
+            <!-- CARD 2: ACTIVITY 2 – GLOBAL ACCENTS & LISTENING QUEST -->
+            <!-- ===================================================== -->
+            <article class="bg-white rounded-[2rem] border-2 border-teal-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition-all">
+                <div>
+                    <div class="bg-gradient-to-r from-teal-500 to-emerald-600 p-6 text-white">
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-white/20 text-xs font-extrabold">
+                                Activity 2 • World Englishes
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-blue-950/30 text-xs font-bold">
+                                <i class="fa-solid fa-ear-listen mr-1"></i> Listening & Inference
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Activity 2 – Global Accents & Listening</h3>
                     </div>
-                    <h2 class="text-2xl font-bold">Acentos Globales y Búsqueda Auditiva</h2>
-                    <p class="text-sky-100 text-sm mt-1">Comprensión de Variaciones Lingüísticas</p>
-                </div>
 
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="mb-4">
-                            <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide mb-2"><i class="fas fa-list-ol text-sky-600 mr-2"></i>Instrucciones:</h3>
-                            <ol class="list-decimal list-inside text-sm text-slate-600 space-y-1">
-                                <li>Selecciona una región en el mapa interactivo (India, Nigeria, etc.).</li>
-                                <li>Escucha la grabación de audio de un hablante no nativo.</li>
-                                <li>Responde preguntas e infiere significados del contexto.</li>
+                    <div class="p-6 space-y-5">
+                        <!-- Instrucciones -->
+                        <div class="bg-teal-50 border border-teal-200 rounded-2xl p-4 space-y-1.5">
+                            <h4 class="text-xs font-extrabold uppercase tracking-wider text-teal-800 flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-info"></i> Instructions
+                            </h4>
+                            <ol class="text-xs sm:text-sm text-slate-700 space-y-1 list-decimal pl-4 font-medium">
+                                <li>Explore the interactive world map pins representing non-native and regional English speakers.</li>
+                                <li>Listen to community traditions and oral narratives via the multimodal audio player.</li>
+                                <li>Answer open questions, identify key expressions, and infer meanings from context.</li>
                             </ol>
                         </div>
-                        <div class="mb-6 bg-sky-50 p-4 rounded-xl border border-sky-100">
-                            <span class="text-xs font-bold text-sky-700 block mb-1"><i class="fas fa-globe mr-1"></i> Apoyo Visual: Lingua Franca</span>
-                            <p class="text-xs text-slate-600">🌐 Los acentos diversos son legítimos y enriquecedores.</p>
+
+                        <!-- Apoyo Visual: Infografía de Acentos -->
+                        <div class="bg-emerald-950 text-white p-4 rounded-2xl border-2 border-teal-400 space-y-2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-extrabold text-amber-300 uppercase tracking-wide">
+                                    <i class="fa-solid fa-globe mr-1"></i> Accent Diversity Map Preview
+                                </span>
+                                <span class="px-2 py-0.5 rounded bg-teal-800 text-[10px] text-teal-200 font-bold">Lingua Franca</span>
+                            </div>
+                            <p class="text-xs text-blue-100 leading-relaxed">
+                                English belongs to the world. Non-native phonology and regional structures are valid, rich vehicles of identity and communication.
+                            </p>
                         </div>
                     </div>
+                </div>
 
-                    <button onclick="openModal('modal2')" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md cursor-pointer">
-                        <i class="fas fa-headphones mr-2"></i> Abrir Mapa de Acentos
+                <div class="px-6 pb-6">
+                    <button onclick="openModal('modal-act2')" class="w-full py-3.5 px-5 rounded-2xl bg-teal-500 hover:bg-teal-600 text-white font-extrabold text-sm shadow-sm border-b-4 border-teal-700 active:border-b-0 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-map-location-dot"></i> Open Audio Map Quest
                     </button>
                 </div>
-            </div>
+            </article>
 
-            <!-- CUADRITO 3: Activity 3 – Cultural Mediator -->
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col overflow-hidden transition hover:shadow-2xl">
-                <div class="bg-amber-600 p-6 text-white">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="bg-amber-500 text-xs font-bold px-2.5 py-1 rounded">Activity 3</span>
-                        <span class="text-xs bg-amber-700 px-2.5 py-1 rounded">Speaking & Pragmatics</span>
+            <!-- ===================================================== -->
+            <!-- CARD 3: ACTIVITY 3 – CULTURAL MEDIATOR ROLE-PLAY -->
+            <!-- ===================================================== -->
+            <article class="bg-white rounded-[2rem] border-2 border-amber-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition-all">
+                <div>
+                    <div class="bg-gradient-to-r from-amber-500 to-orange-500 p-6 text-white">
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-white/20 text-xs font-extrabold">
+                                Activity 3 • Pragmatic Interaction
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-blue-950/30 text-xs font-bold">
+                                <i class="fa-solid fa-comments mr-1"></i> Speaking & Mediation
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Activity 3 – Cultural Mediator Role-Play</h3>
                     </div>
-                    <h2 class="text-2xl font-bold">Juego de Roles como Mediador Cultural</h2>
-                    <p class="text-amber-100 text-sm mt-1">Negociación y Resolución de Conflictos</p>
-                </div>
 
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="mb-4">
-                            <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide mb-2"><i class="fas fa-list-ol text-amber-600 mr-2"></i>Instrucciones:</h3>
-                            <ol class="list-decimal list-inside text-sm text-slate-600 space-y-1">
-                                <li>Ingresa a la simulación de un equipo multicultural.</li>
-                                <li>Analiza un choque cultural por estilos de comunicación.</li>
-                                <li>Selecciona respuestas asertivas usando modales de cortesía.</li>
+                    <div class="p-6 space-y-5">
+                        <!-- Instrucciones -->
+                        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 space-y-1.5">
+                            <h4 class="text-xs font-extrabold uppercase tracking-wider text-amber-800 flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-info"></i> Instructions
+                            </h4>
+                            <ol class="text-xs sm:text-sm text-slate-700 space-y-1 list-decimal pl-4 font-medium">
+                                <li>Enter the digital simulation of an international team experiencing a communication clash.</li>
+                                <li>Analyze direct vs. indirect communication styles and cultural friction.</li>
+                                <li>Select polite pragmatic responses using modal verbs (*could*, *would*) to preserve team climate.</li>
                             </ol>
                         </div>
-                        <div class="mb-6 bg-amber-50 p-4 rounded-xl border border-amber-100">
-                            <span class="text-xs font-bold text-amber-700 block mb-1"><i class="fas fa-comments mr-1"></i> Politeness Modals</span>
-                            <p class="text-xs text-slate-600">✔️ Usa frases como <em>"Could you please..."</em></p>
+
+                        <!-- Apoyo Visual: Politeness Flashcard -->
+                        <div class="bg-[#FFFDF7] p-4 rounded-2xl border-2 border-amber-300 space-y-2">
+                            <span class="text-xs font-extrabold text-amber-900 uppercase tracking-wide block">
+                                <i class="fa-solid fa-lightbulb text-amber-600 mr-1"></i> Pragmatic Tip: Softening Requests
+                            </span>
+                            <div class="grid grid-cols-2 gap-2 text-xs">
+                                <div class="p-2 rounded-xl bg-rose-100 text-rose-900 font-bold text-center">
+                                    ❌ "Do this now!" (Imposing)
+                                </div>
+                                <div class="p-2 rounded-xl bg-emerald-100 text-emerald-900 font-bold text-center">
+                                    ✔️ "Could you please...?" (Polite)
+                                </div>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <button onclick="openModal('modal3')" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md cursor-pointer">
-                        <i class="fas fa-users mr-2"></i> Iniciar Simulación
+                <div class="px-6 pb-6">
+                    <button onclick="openModal('modal-act3')" class="w-full py-3.5 px-5 rounded-2xl bg-amber-500 hover:bg-amber-600 text-white font-extrabold text-sm shadow-sm border-b-4 border-amber-700 active:border-b-0 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                        <i class="fa-solid fa-users-gear"></i> Start Simulation
                     </button>
                 </div>
-            </div>
+            </article>
 
-            <!-- CUADRITO 4: Phase 2 Resource -->
-            <div class="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col overflow-hidden transition hover:shadow-2xl">
-                <div class="bg-emerald-600 p-6 text-white">
-                    <div class="flex justify-between items-center mb-2">
-                        <span class="bg-emerald-500 text-xs font-bold px-2.5 py-1 rounded">Phase 2 Resource</span>
-                        <span class="text-xs bg-emerald-700 px-2.5 py-1 rounded">Genially & LearningApps</span>
+            <!-- ===================================================== -->
+            <!-- CARD 4: PHASE 2 GAMIFIED RESOURCE & TOOLS -->
+            <!-- ===================================================== -->
+            <article class="bg-white rounded-[2rem] border-2 border-violet-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition-all">
+                <div>
+                    <div class="bg-gradient-to-r from-violet-600 to-indigo-700 p-6 text-white">
+                        <div class="flex items-center justify-between gap-2 mb-2">
+                            <span class="px-3 py-1 rounded-full bg-white/20 text-xs font-extrabold">
+                                Phase 2 • Group 17 UNAD
+                            </span>
+                            <span class="px-3 py-1 rounded-full bg-amber-400 text-blue-950 text-xs font-bold">
+                                <i class="fa-solid fa-rocket mr-1"></i> Gamified EdTech
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold">Healthy Lifestyles & Well-being</h3>
                     </div>
-                    <h2 class="text-2xl font-bold">Healthy Lifestyles & Well-being</h2>
-                    <p class="text-emerald-100 text-sm mt-1">Recurso Gamificado y UDL</p>
-                </div>
 
-                <div class="p-6 flex-1 flex flex-col justify-between">
-                    <div>
-                        <div class="mb-4">
-                            <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide mb-2"><i class="fas fa-list-ol text-emerald-600 mr-2"></i>Instrucciones:</h3>
-                            <ol class="list-decimal list-inside text-sm text-slate-600 space-y-1">
-                                <li>Haz clic para entrar al tablero interactivo en Genially.</li>
-                                <li>Completa los retos de secuencia auditiva y rutinas.</li>
+                    <div class="p-6 space-y-5">
+                        <!-- Instrucciones -->
+                        <div class="bg-violet-50 border border-violet-200 rounded-2xl p-4 space-y-1.5">
+                            <h4 class="text-xs font-extrabold uppercase tracking-wider text-violet-800 flex items-center gap-1.5">
+                                <i class="fa-solid fa-circle-info"></i> Instructions
+                            </h4>
+                            <ol class="text-xs sm:text-sm text-slate-700 space-y-1 list-decimal pl-4 font-medium">
+                                <li>Explore the post-methodological digital environment created for practical teaching tasks.</li>
+                                <li>Access the Genially main board, Programming Matrix, and interactive LearningApps tasks.</li>
+                                <li>Practice listening sequence connectors (*First, Next, Then, Finally*) and emotional wellbeing.</li>
                             </ol>
                         </div>
-                        <div class="mb-6 bg-emerald-50 p-4 rounded-xl border border-emerald-100 space-y-2">
-                            <span class="text-xs font-bold text-emerald-700 block"><i class="fas fa-link mr-1"></i> Enlaces Directos:</span>
-                            <a href="https://view.genially.com/6aale3a9033920c85a6fa223" target="_blank" class="text-emerald-700 text-xs font-semibold hover:underline block">🚀 Recurso Gamificado (Genially)</a>
-                            <a href="https://learningapps.org/watch?v=phzrctn5n26" target="_blank" class="text-emerald-700 text-xs font-semibold hover:underline block">🧩 Práctica LearningApps (Listening)</a>
+
+                        <!-- Enlaces Directos -->
+                        <div class="space-y-2">
+                            <span class="text-xs font-extrabold text-slate-700 uppercase tracking-wider block">
+                                <i class="fa-solid fa-link text-violet-600 mr-1"></i> Direct Project Links
+                            </span>
+                            <div class="flex flex-col gap-2">
+                                <a href="https://view.genially.com/6aale3a9033920c85a6fa223" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl bg-violet-100 hover:bg-violet-200 text-violet-950 font-bold text-xs transition-all">
+                                    <span><i class="fa-solid fa-gamepad mr-2 text-violet-600"></i> Gamified Resource (Genially)</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                                <a href="https://learningapps.org/watch?v=phzrctn5n26" target="_blank" class="flex items-center justify-between p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition-all">
+                                    <span><i class="fa-solid fa-puzzle-piece mr-2 text-teal-600"></i> LearningApps Listening Practice</span>
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
+                </div>
 
-                    <a href="https://view.genially.com/6aale3a9033920c85a6fa223" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md text-center">
-                        <i class="fas fa-rocket mr-2"></i> Lanzar Genially
+                <div class="px-6 pb-6">
+                    <a href="https://view.genially.com/6aale3a9033920c85a6fa223" target="_blank" class="w-full py-3.5 px-5 rounded-2xl bg-violet-600 hover:bg-violet-700 text-white font-extrabold text-sm shadow-sm border-b-4 border-violet-800 active:border-b-0 transition-all flex items-center justify-center gap-2 cursor-pointer text-center">
+                        <i class="fa-solid fa-external-link-alt"></i> Open Genially Board
                     </a>
                 </div>
-            </div>
+            </article>
 
         </div>
-    </div>
+    </main>
 
-    <!-- VENTANAS MODALES INTERACTIVAS -->
+    <!-- ===================================================================== -->
+    <!-- INTERACTIVE MODALS FOR ACTIVITIES -->
+    <!-- ===================================================================== -->
 
     <!-- Modal Activity 1 -->
-    <div id="modal1" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4 z-50">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl">
-            <div class="flex justify-between items-center mb-4 border-b pb-3">
-                <h3 class="text-xl font-bold text-indigo-900"><i class="fas fa-gamepad mr-2"></i>Activity 1: Cazador de Estereotipos</h3>
-                <button onclick="closeModal('modal1')" class="text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer">&times;</button>
+    <div id="modal-act1" class="fixed inset-0 bg-blue-950/60 backdrop-blur-xs hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-[2rem] max-w-xl w-full p-6 sm:p-8 shadow-2xl border-4 border-rose-200 space-y-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-rose-500 text-white flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Activity 1: Stereotype Hunter Workshop</h3>
+                        <span class="text-xs text-rose-600 font-extrabold uppercase">Critical Discourse Analysis</span>
+                    </div>
+                </div>
+                <button onclick="closeModal('modal-act1')" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 font-bold cursor-pointer">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
             </div>
-            <p class="text-sm text-slate-600 mb-4">Analiza el siguiente titular publicitario y responde:</p>
-            <div class="bg-slate-100 p-3 rounded-lg text-sm italic mb-4 text-slate-800">
-                "Real men don't do kitchen chores; let the modern housewife handle everything effortlessly."
+
+            <div class="space-y-4">
+                <div class="p-4 rounded-2xl bg-slate-100 border text-sm text-slate-800 italic">
+                    "Only native speakers from Western countries possess true fluency and authentic business acumen."
+                </div>
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wide">
+                        1. What underlying cultural assumption is embedded in this statement?
+                    </label>
+                    <textarea id="ans-act1-q1" class="w-full p-3 rounded-xl border-2 border-slate-200 text-sm focus:border-rose-500 outline-none" rows="2" placeholder="Analyze the bias or linguistic prejudice..."></textarea>
+                </div>
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wide">
+                        2. Propose an inclusive rewrite in English:
+                    </label>
+                    <input id="ans-act1-q2" type="text" class="w-full p-3 rounded-xl border-2 border-slate-200 text-sm focus:border-rose-500 outline-none" placeholder="Write a respectful, inclusive sentence...">
+                </div>
             </div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">¿Qué suposición cultural subyacente está incrustada en este titular?</label>
-            <textarea class="w-full border rounded-lg p-2 text-sm mb-4" rows="2" placeholder="Escribe tu análisis crítico aquí..."></textarea>
-            <label class="block text-xs font-bold text-slate-700 mb-1">Propón una reescritura inclusiva en inglés:</label>
-            <input type="text" class="w-full border rounded-lg p-2 text-sm mb-6" placeholder="Escribe tu versión respetuosa e inclusiva...">
-            <div class="flex justify-end space-x-2">
-                <button onclick="closeModal('modal1'); alert('¡Excelente análisis! +15 puntos sumados.');" class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 cursor-pointer">Enviar Respuesta</button>
+
+            <div class="flex items-center justify-end gap-3 pt-4 border-t">
+                <button onclick="closeModal('modal-act1')" class="px-5 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-sm cursor-pointer">Cancel</button>
+                <button onclick="submitActivity1()" class="px-6 py-2.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white font-extrabold text-sm shadow-sm cursor-pointer">
+                    Submit Analysis (+15 pts)
+                </button>
             </div>
         </div>
     </div>
 
     <!-- Modal Activity 2 -->
-    <div id="modal2" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4 z-50">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl">
-            <div class="flex justify-between items-center mb-4 border-b pb-3">
-                <h3 class="text-xl font-bold text-sky-900"><i class="fas fa-headphones mr-2"></i>Activity 2: Acentos Globales</h3>
-                <button onclick="closeModal('modal2')" class="text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer">&times;</button>
-            </div>
-            <p class="text-sm text-slate-600 mb-4">Has seleccionado la región de <strong>África Occidental (Nigeria)</strong>. Escucha el audio simulado del hablante describiendo una ceremonia comunitaria.</p>
-            <div class="bg-sky-50 p-4 rounded-xl border border-sky-100 mb-4 text-center">
-                <button onclick="alert('Reproduciendo audio con acento regional de inglés como lengua franca... (Simulación de audio)')" class="bg-sky-600 text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-sky-700 cursor-pointer">
-                    <i class="fas fa-play mr-1"></i> Reproducir Audio Comunitario
+    <div id="modal-act2" class="fixed inset-0 bg-blue-950/60 backdrop-blur-xs hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-[2rem] max-w-xl w-full p-6 sm:p-8 shadow-2xl border-4 border-teal-200 space-y-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-teal-500 text-white flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Activity 2: Global Accents Audio Quest</h3>
+                        <span class="text-xs text-teal-600 font-extrabold uppercase">Listening & Contextual Inference</span>
+                    </div>
+                </div>
+                <button onclick="closeModal('modal-act2')" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 font-bold cursor-pointer">
+                    <i class="fa-solid fa-xmark text-lg"></i>
                 </button>
             </div>
-            <label class="block text-xs font-bold text-slate-700 mb-1">¿Cuál es el valor cultural principal expresado?</label>
-            <input type="text" class="w-full border rounded-lg p-2 text-sm mb-4" placeholder="Ej: Respeto por los mayores y la tierra...">
-            <div class="flex justify-end space-x-2">
-                <button onclick="closeModal('modal2'); alert('¡Respuesta registrada con éxito!');" class="bg-sky-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sky-700 cursor-pointer">Enviar</button>
+
+            <div class="space-y-4">
+                <div class="p-4 rounded-2xl bg-teal-50 border border-teal-200 text-center space-y-3">
+                    <p class="text-xs font-bold text-teal-900">Region Selected: <strong>South Asia (India - Community Harvest Tradition)</strong></p>
+                    <button onclick="showToast('Playing audio simulation: Non-native speaker explaining seasonal community values...', 'info')" class="px-4 py-2 rounded-xl bg-teal-600 hover:bg-teal-700 text-white text-xs font-extrabold shadow-sm cursor-pointer">
+                        <i class="fa-solid fa-play mr-1.5"></i> Play Audio Clip
+                    </button>
+                </div>
+                <div class="space-y-1.5">
+                    <label class="block text-xs font-extrabold text-slate-700 uppercase tracking-wide">
+                        What is the core cultural value expressed by the speaker?
+                    </label>
+                    <input id="ans-act2" type="text" class="w-full p-3 rounded-xl border-2 border-slate-200 text-sm focus:border-teal-500 outline-none" placeholder="Infer meaning from context...">
+                </div>
+            </div>
+
+            <div class="flex items-center justify-end gap-3 pt-4 border-t">
+                <button onclick="closeModal('modal-act2')" class="px-5 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-sm cursor-pointer">Cancel</button>
+                <button onclick="submitActivity2()" class="px-6 py-2.5 rounded-xl bg-teal-500 hover:bg-teal-600 text-white font-extrabold text-sm shadow-sm cursor-pointer">
+                    Submit Answer (+10 pts)
+                </button>
             </div>
         </div>
     </div>
 
     <!-- Modal Activity 3 -->
-    <div id="modal3" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4 z-50">
-        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl">
-            <div class="flex justify-between items-center mb-4 border-b pb-3">
-                <h3 class="text-xl font-bold text-amber-900"><i class="fas fa-users mr-2"></i>Activity 3: Mediador Cultural</h3>
-                <button onclick="closeModal('modal3')" class="text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer">&times;</button>
+    <div id="modal-act3" class="fixed inset-0 bg-blue-950/60 backdrop-blur-xs hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-[2rem] max-w-xl w-full p-6 sm:p-8 shadow-2xl border-4 border-amber-200 space-y-6 max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b pb-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-amber-500 text-white flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-users-gear"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">Activity 3: Cultural Mediator Simulation</h3>
+                        <span class="text-xs text-amber-600 font-extrabold uppercase">Pragmatic Conflict Resolution</span>
+                    </div>
+                </div>
+                <button onclick="closeModal('modal-act3')" class="w-9 h-9 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center text-slate-500 font-bold cursor-pointer">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
             </div>
-            <p class="text-sm text-slate-600 mb-4"><strong>Situación:</strong> Un compañero extranjero se siente presionado por un estilo de comunicación demasiado directo en el equipo.</p>
-            <label class="block text-xs font-bold text-slate-700 mb-2">Selecciona la mejor respuesta empática y asertiva:</label>
-            <div class="space-y-2 mb-6 text-sm">
-                <label class="block p-3 border rounded-xl hover:bg-amber-50 cursor-pointer">
-                    <input type="radio" name="roleplay" class="mr-2"> "You must finish this right now without excuses."
-                </label>
-                <label class="block p-3 border rounded-xl hover:bg-amber-50 cursor-pointer">
-                    <input type="radio" name="roleplay" class="mr-2"> "Could we perhaps review the timeline together when you have a moment?"
-                </label>
+
+            <div class="space-y-4">
+                <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 text-sm text-slate-800">
+                    <strong>Scenario:</strong> A cross-cultural team clash occurs because a direct communication style is perceived as aggressive by international peers. As a cultural mediator, how do you address the project deadline?
+                </div>
+                <div class="space-y-2">
+                    <label class="flex items-center gap-3 p-3 rounded-xl border-2 border-slate-200 hover:border-amber-400 cursor-pointer text-sm font-medium">
+                        <input type="radio" name="roleplay-choice" value="wrong" class="text-amber-500">
+                        <span>"You must finish your tasks right now without delay!"</span>
+                    </label>
+                    <label class="flex items-center gap-3 p-3 rounded-xl border-2 border-slate-200 hover:border-amber-400 cursor-pointer text-sm font-medium">
+                        <input type="radio" name="roleplay-choice" value="correct" class="text-amber-500">
+                        <span>"Could we perhaps review our timeline together and adjust tasks collaboratively when you have a moment?"</span>
+                    </label>
+                </div>
             </div>
-            <div class="flex justify-end space-x-2">
-                <button onclick="closeModal('modal3'); alert('¡Excelente elección de mediación! Empatía y clima de equipo mejorados.');" class="bg-amber-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-amber-700 cursor-pointer">Verificar Decisión</button>
+
+            <div class="flex items-center justify-end gap-3 pt-4 border-t">
+                <button onclick="closeModal('modal-act3')" class="px-5 py-2.5 rounded-xl bg-slate-200 hover:bg-slate-300 text-slate-700 font-bold text-sm cursor-pointer">Cancel</button>
+                <button onclick="submitActivity3()" class="px-6 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-extrabold text-sm shadow-sm cursor-pointer">
+                    Verify Decision (+15 pts)
+                </button>
             </div>
         </div>
     </div>
 
-    <!-- Script para controlar los modales -->
+    <!-- JavaScript para interactividad -->
     <script>
+        let globalScore = 0;
+        let badgeCount = 0;
+
+        // Flashcards data para Activity 1
+        const fc1Data = [
+            { front: '"Exotic tribal workers are naturally submissive."', back: '"Indigenous artisans bring rich heritage and skilled craftsmanship."' },
+            { front: '"Foreign employees always struggle with proper business English."', back: '"Multilingual professionals enrich our global team communication."' },
+            { front: '"The poor migrant community lives in isolated backwardness."', back: '"Migrant communities contribute vibrant resilience and diverse perspectives."' }
+        ];
+        let fc1Index = 0;
+
+        function nextCard1Flashcard() {
+            fc1Index = (fc1Index + 1) % fc1Data.length;
+            const container = document.getElementById('fc1-container');
+            container.classList.remove('flipped');
+            setTimeout(() => {
+                document.getElementById('fc1-front-text').innerText = fc1Data[fc1Index].front;
+                document.getElementById('fc1-back-text').innerText = fc1Data[fc1Index].back;
+            }, 200);
+        }
+
+        // Modales
         function openModal(modalId) {
             document.getElementById(modalId).classList.remove('hidden');
             document.getElementById(modalId).classList.add('flex');
@@ -233,6 +454,75 @@
         function closeModal(modalId) {
             document.getElementById(modalId).classList.remove('flex');
             document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Sistema de Puntuación y Toast
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            const bgCol = type === 'success' ? 'bg-emerald-600' : (type === 'info' ? 'bg-blue-600' : 'bg-rose-600');
+            toast.className = `${bgCol} text-white px-5 py-3 rounded-2xl shadow-lg text-xs sm:text-sm font-bold flex items-center gap-2 transform translate-y-2 opacity-0 transition-all duration-300`;
+            toast.innerHTML = `<i class="fa-solid fa-circle-check text-base"></i> <span>${message}</span>`;
+            container.appendChild(toast);
+            setTimeout(() => { toast.classList.remove('translate-y-2', 'opacity-0'); }, 50);
+            setTimeout(() => {
+                toast.classList.add('translate-y-2', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
+
+        function addScore(points) {
+            globalScore += points;
+        }
+
+        function addBadge() {
+            if (badgeCount < 3) {
+                badgeCount++;
+            }
+        }
+
+        function submitActivity1() {
+            const q1 = document.getElementById('ans-act1-q1').value.trim();
+            const q2 = document.getElementById('ans-act1-q2').value.trim();
+            if(!q1 || !q2) {
+                showToast('Please complete both fields before submitting!', 'error');
+                return;
+            }
+            addScore(15);
+            addBadge();
+            closeModal('modal-act1');
+            showToast('Activity 1 completed! +15 points & Diversity Champion badge unlocked.');
+            document.getElementById('ans-act1-q1').value = '';
+            document.getElementById('ans-act1-q2').value = '';
+        }
+
+        function submitActivity2() {
+            const ans = document.getElementById('ans-act2').value.trim();
+            if(!ans) {
+                showToast('Please enter your contextual inference!', 'error');
+                return;
+            }
+            addScore(10);
+            addBadge();
+            closeModal('modal-act2');
+            showToast('Activity 2 completed! +10 points & Critical Listener badge unlocked.');
+            document.getElementById('ans-act2').value = '';
+        }
+
+        function submitActivity3() {
+            const selected = document.querySelector('input[name="roleplay-choice"]:checked');
+            if(!selected) {
+                showToast('Please select a mediation response option!', 'error');
+                return;
+            }
+            if(selected.value === 'correct') {
+                addScore(15);
+                addBadge();
+                closeModal('modal-act3');
+                showToast('Fantastic mediation! Politeness modals applied successfully. +15 pts.');
+            } else {
+                showToast('Direct imposing language caused friction. Try a polite modal verb!', 'error');
+            }
         }
     </script>
 </body>
