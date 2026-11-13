@@ -6,12 +6,6 @@
     <title>Global Voices - Exercises & Practice</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        .perspective-1000 { perspective: 1000px; }
-        .transform-style-3d { transform-style: preserve-3d; }
-        .backface-hidden { backface-visibility: hidden; }
-        .rotate-y-180 { transform: rotateY(180deg); }
-    </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans antialiased min-h-screen p-6 md:p-12">
 
@@ -19,9 +13,9 @@
         <!-- Encabezado de la Sección -->
         <header class="text-center mb-12">
             <span class="bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Interactive Learning Modules</span>
-            <h1 class="text-3xl md:text-5xl font-ext500 font-bold text-slate-900 mt-3 mb-4">Exercises & Practical Quests</h1>
+            <h1 class="text-3xl md:text-5xl font-bold text-slate-900 mt-3 mb-4">Exercises & Practical Quests</h1>
             <p class="text-lg text-slate-600 max-w-2xl mx-auto">
-                Explora nuestras 3 misiones interculturales diseñadas para fortalecer tus habilidades comunicativas en inglés[cite: 4] y accede al recurso gamificado de la Fase 2[cite: 7, 14].
+                Explora nuestras 3 misiones interculturales diseñadas para fortalecer tus habilidades comunicativas en inglés y accede al recurso gamificado.
             </p>
         </header>
 
@@ -44,29 +38,24 @@
                         <div class="mb-4">
                             <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide mb-2"><i class="fas fa-list-ol text-indigo-600 mr-2"></i>Instrucciones:</h3>
                             <ol class="list-decimal list-inside text-sm text-slate-600 space-y-1">
-                                <li>Explora la galería visual de 3 campañas publicitarias y 2 titulares periodísticos[cite: 4].</li>
-                                <li>Identifica adjetivos o frases con estereotipos de género, raza o nacionalidad[cite: 4].</li>
-                                <li>Clasifícalos como "Stereotype" o "Inclusive" y propón una reescritura respetuosa[cite: 4].</li>
+                                <li>Explora la galería visual de campañas publicitarias y titulares.</li>
+                                <li>Identifica adjetivos o frases con estereotipos de género o raza.</li>
+                                <li>Clasifícalos y propón una reescritura inclusiva.</li>
                             </ol>
                         </div>
-
-                        <!-- Apoyo Visual: Flashcard interactiva -->
                         <div class="mb-6 bg-indigo-50 p-4 rounded-xl border border-indigo-100">
                             <span class="text-xs font-bold text-indigo-700 block mb-1"><i class="fas fa-lightbulb mr-1"></i> Apoyo Visual: Lenguaje Inclusivo</span>
-                            <p class="text-xs text-slate-600 mb-2">Pasa el mouse o haz clic para ver el cambio de sesgo a inclusión:</p>
-                            <div class="bg-white p-3 rounded-lg border border-indigo-200 text-sm text-indigo-900 font-medium cursor-pointer transition hover:bg-indigo-100" onclick="alert('Ejemplo: Cambiar \'The cleaning lady always does it\' por \'The sanitation professional performs the task efficiently\'.')">
-                                🔄 <em>"Bossy woman"</em> ➔ <strong>"Assertive leader"</strong> (Haz clic para ver más)
-                            </div>
+                            <p class="text-xs text-slate-600">🔄 <em>"Bossy woman"</em> ➔ <strong>"Assertive leader"</strong></p>
                         </div>
                     </div>
 
-                    <button onclick="openActivity1()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md">
-                        <i class="fas fa-gamepad mr-2"></i> Iniciar Actividad 1 (+15 pts)
+                    <button onclick="openModal('modal1')" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md cursor-pointer">
+                        <i class="fas fa-gamepad mr-2"></i> Iniciar Actividad 1
                     </button>
                 </div>
             </div>
 
-            <!-- CUADRITO 2: Activity 2 – Global Accents & Listening Quest -->
+            <!-- CUADRITO 2: Activity 2 – Global Accents -->
             <div class="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col overflow-hidden transition hover:shadow-2xl">
                 <div class="bg-sky-600 p-6 text-white">
                     <div class="flex justify-between items-center mb-2">
@@ -82,28 +71,24 @@
                         <div class="mb-4">
                             <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide mb-2"><i class="fas fa-list-ol text-sky-600 mr-2"></i>Instrucciones:</h3>
                             <ol class="list-decimal list-inside text-sm text-slate-600 space-y-1">
-                                <li>Selecciona una región en el mapa interactivo (India, Nigeria, comunidades indígenas)[cite: 3, 4].</li>
-                                <li>Escucha la grabación de audio de un hablante no nativo explicando una tradición[cite: 3, 4].</li>
-                                <li>Responde preguntas abiertas e infiere significados a partir del contexto[cite: 4, 5].</li>
+                                <li>Selecciona una región en el mapa interactivo (India, Nigeria, etc.).</li>
+                                <li>Escucha la grabación de audio de un hablante no nativo.</li>
+                                <li>Responde preguntas e infiere significados del contexto.</li>
                             </ol>
                         </div>
-
-                        <!-- Apoyo Visual: Infografía de Acentos -->
                         <div class="mb-6 bg-sky-50 p-4 rounded-xl border border-sky-100">
-                            <span class="text-xs font-bold text-sky-700 block mb-1"><i class="fas fa-globe mr-1"></i> Apoyo Visual: English as a Lingua Franca</span>
-                            <div class="text-xs text-slate-600 bg-white p-2.5 rounded border border-sky-200">
-                                🌐 <strong>Nota:</strong> Los acentos no nativos son legítimos y enriquecedores. La meta es la comunicación efectiva, no la imitación de un acento idealizado[cite: 1, 3, 5].
-                            </div>
+                            <span class="text-xs font-bold text-sky-700 block mb-1"><i class="fas fa-globe mr-1"></i> Apoyo Visual: Lingua Franca</span>
+                            <p class="text-xs text-slate-600">🌐 Los acentos diversos son legítimos y enriquecedores.</p>
                         </div>
                     </div>
 
-                    <button onclick="openActivity2()" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md">
+                    <button onclick="openModal('modal2')" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md cursor-pointer">
                         <i class="fas fa-headphones mr-2"></i> Abrir Mapa de Acentos
                     </button>
                 </div>
             </div>
 
-            <!-- CUADRITO 3: Activity 3 – Cultural Mediator Role-Play -->
+            <!-- CUADRITO 3: Activity 3 – Cultural Mediator -->
             <div class="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col overflow-hidden transition hover:shadow-2xl">
                 <div class="bg-amber-600 p-6 text-white">
                     <div class="flex justify-between items-center mb-2">
@@ -119,37 +104,32 @@
                         <div class="mb-4">
                             <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide mb-2"><i class="fas fa-list-ol text-amber-600 mr-2"></i>Instrucciones:</h3>
                             <ol class="list-decimal list-inside text-sm text-slate-600 space-y-1">
-                                <li>Ingresa a la simulación digital de un equipo multicultural en un entorno internacional[cite: 1, 5].</li>
-                                <li>Analiza un choque cultural causado por estilos de comunicación (directo vs. indirecto)[cite: 5].</li>
-                                <li>Asume el rol de mediador seleccionando respuestas asertivas y usando verbos modales de cortesía[cite: 5].</li>
+                                <li>Ingresa a la simulación de un equipo multicultural.</li>
+                                <li>Analiza un choque cultural por estilos de comunicación.</li>
+                                <li>Selecciona respuestas asertivas usando modales de cortesía.</li>
                             </ol>
                         </div>
-
-                        <!-- Apoyo Visual: Flashcards Pragmáticas -->
                         <div class="mb-6 bg-amber-50 p-4 rounded-xl border border-amber-100">
-                            <span class="text-xs font-bold text-amber-700 block mb-1"><i class="fas fa-comments mr-1"></i> Apoyo Visual: Politeness Modals</span>
-                            <div class="grid grid-cols-2 gap-2 text-xs text-slate-700">
-                                <div class="bg-white p-2 rounded border border-amber-200">❌ <em>"Do this now!"</em></div>
-                                <div class="bg-white p-2 rounded border border-amber-200">✔️ <em>"Could you please..."</em>[cite: 5]</div>
-                            </div>
+                            <span class="text-xs font-bold text-amber-700 block mb-1"><i class="fas fa-comments mr-1"></i> Politeness Modals</span>
+                            <p class="text-xs text-slate-600">✔️ Usa frases como <em>"Could you please..."</em></p>
                         </div>
                     </div>
 
-                    <button onclick="openActivity3()" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md">
-                        <i class="fas fa-users mr-2"></i> Iniciar Simulación de Mediación
+                    <button onclick="openModal('modal3')" class="w-full bg-amber-600 hover:bg-amber-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md cursor-pointer">
+                        <i class="fas fa-users mr-2"></i> Iniciar Simulación
                     </button>
                 </div>
             </div>
 
-            <!-- CUADRITO 4: Phase 2 Resource – Healthy Lifestyles & Well-being -->
+            <!-- CUADRITO 4: Phase 2 Resource -->
             <div class="bg-white rounded-2xl shadow-xl border border-slate-100 flex flex-col overflow-hidden transition hover:shadow-2xl">
                 <div class="bg-emerald-600 p-6 text-white">
                     <div class="flex justify-between items-center mb-2">
                         <span class="bg-emerald-500 text-xs font-bold px-2.5 py-1 rounded">Phase 2 Resource</span>
                         <span class="text-xs bg-emerald-700 px-2.5 py-1 rounded">Genially & LearningApps</span>
                     </div>
-                    <h2 class="text-2xl font-bold">Healthy Lifestyles & Emotional Well-being</h2>
-                    <p class="text-emerald-100 text-sm mt-1">Recurso Gamificado y UDL[cite: 9, 14]</p>
+                    <h2 class="text-2xl font-bold">Healthy Lifestyles & Well-being</h2>
+                    <p class="text-emerald-100 text-sm mt-1">Recurso Gamificado y UDL</p>
                 </div>
 
                 <div class="p-6 flex-1 flex flex-col justify-between">
@@ -157,25 +137,19 @@
                         <div class="mb-4">
                             <h3 class="text-sm font-bold text-slate-700 uppercase tracking-wide mb-2"><i class="fas fa-list-ol text-emerald-600 mr-2"></i>Instrucciones:</h3>
                             <ol class="list-decimal list-inside text-sm text-slate-600 space-y-1">
-                                <li>Haz clic en el botón de abajo para entrar al tablero interactivo en Genially[cite: 14].</li>
-                                <li>Completa los retos de secuencia auditiva (*First, Next, Then, Finally*)[cite: 11].</li>
-                                <li>Desarrolla las actividades complementarias de emparejamiento y cuestionarios de rutinas saludables[cite: 11, 12, 13].</li>
+                                <li>Haz clic para entrar al tablero interactivo en Genially.</li>
+                                <li>Completa los retos de secuencia auditiva y rutinas.</li>
                             </ol>
                         </div>
-
-                        <!-- Enlaces directos incrustados -->
                         <div class="mb-6 bg-emerald-50 p-4 rounded-xl border border-emerald-100 space-y-2">
-                            <span class="text-xs font-bold text-emerald-700 block"><i class="fas fa-link mr-1"></i> Enlaces Directos del Proyecto:</span>
-                            <div class="flex flex-col space-y-1 text-xs">
-                                <a href="https://view.genially.com/6aale3a9033920c85a6fa223" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center"><i class="fas fa-external-link-alt mr-1"></i> Recurso Gamificado (Genially)[cite: 14]</a>
-                                <a href="https://view.genially.com/6aa466ad322078f1de1afd36" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center"><i class="fas fa-external-link-alt mr-1"></i> Matriz de Programación (Genially)[cite: 10]</a>
-                                <a href="https://learningapps.org/watch?v=phzrctn5n26" target="_blank" class="text-emerald-700 font-semibold hover:underline flex items-center"><i class="fas fa-external-link-alt mr-1"></i> Práctica LearningApps (Listening)[cite: 13]</a>
-                            </div>
+                            <span class="text-xs font-bold text-emerald-700 block"><i class="fas fa-link mr-1"></i> Enlaces Directos:</span>
+                            <a href="https://view.genially.com/6aale3a9033920c85a6fa223" target="_blank" class="text-emerald-700 text-xs font-semibold hover:underline block">🚀 Recurso Gamificado (Genially)</a>
+                            <a href="https://learningapps.org/watch?v=phzrctn5n26" target="_blank" class="text-emerald-700 text-xs font-semibold hover:underline block">🧩 Práctica LearningApps (Listening)</a>
                         </div>
                     </div>
 
                     <a href="https://view.genially.com/6aale3a9033920c85a6fa223" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-3 px-4 rounded-xl transition duration-200 flex items-center justify-center shadow-md text-center">
-                        <i class="fas fa-rocket mr-2"></i> Lanzar Recurso Gamificado Principal
+                        <i class="fas fa-rocket mr-2"></i> Lanzar Genially
                     </a>
                 </div>
             </div>
@@ -183,16 +157,82 @@
         </div>
     </div>
 
-    <!-- Script sencillo para interactividad de prueba en los botones -->
+    <!-- VENTANAS MODALES INTERACTIVAS -->
+
+    <!-- Modal Activity 1 -->
+    <div id="modal1" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+            <div class="flex justify-between items-center mb-4 border-b pb-3">
+                <h3 class="text-xl font-bold text-indigo-900"><i class="fas fa-gamepad mr-2"></i>Activity 1: Cazador de Estereotipos</h3>
+                <button onclick="closeModal('modal1')" class="text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer">&times;</button>
+            </div>
+            <p class="text-sm text-slate-600 mb-4">Analiza el siguiente titular publicitario y responde:</p>
+            <div class="bg-slate-100 p-3 rounded-lg text-sm italic mb-4 text-slate-800">
+                "Real men don't do kitchen chores; let the modern housewife handle everything effortlessly."
+            </div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">¿Qué suposición cultural subyacente está incrustada en este titular?</label>
+            <textarea class="w-full border rounded-lg p-2 text-sm mb-4" rows="2" placeholder="Escribe tu análisis crítico aquí..."></textarea>
+            <label class="block text-xs font-bold text-slate-700 mb-1">Propón una reescritura inclusiva en inglés:</label>
+            <input type="text" class="w-full border rounded-lg p-2 text-sm mb-6" placeholder="Escribe tu versión respetuosa e inclusiva...">
+            <div class="flex justify-end space-x-2">
+                <button onclick="closeModal('modal1'); alert('¡Excelente análisis! +15 puntos sumados.');" class="bg-indigo-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-indigo-700 cursor-pointer">Enviar Respuesta</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Activity 2 -->
+    <div id="modal2" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+            <div class="flex justify-between items-center mb-4 border-b pb-3">
+                <h3 class="text-xl font-bold text-sky-900"><i class="fas fa-headphones mr-2"></i>Activity 2: Acentos Globales</h3>
+                <button onclick="closeModal('modal2')" class="text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer">&times;</button>
+            </div>
+            <p class="text-sm text-slate-600 mb-4">Has seleccionado la región de <strong>África Occidental (Nigeria)</strong>. Escucha el audio simulado del hablante describiendo una ceremonia comunitaria.</p>
+            <div class="bg-sky-50 p-4 rounded-xl border border-sky-100 mb-4 text-center">
+                <button onclick="alert('Reproduciendo audio con acento regional de inglés como lengua franca... (Simulación de audio)')" class="bg-sky-600 text-white px-4 py-2 rounded-full text-xs font-bold hover:bg-sky-700 cursor-pointer">
+                    <i class="fas fa-play mr-1"></i> Reproducir Audio Comunitario
+                </button>
+            </div>
+            <label class="block text-xs font-bold text-slate-700 mb-1">¿Cuál es el valor cultural principal expresado?</label>
+            <input type="text" class="w-full border rounded-lg p-2 text-sm mb-4" placeholder="Ej: Respeto por los mayores y la tierra...">
+            <div class="flex justify-end space-x-2">
+                <button onclick="closeModal('modal2'); alert('¡Respuesta registrada con éxito!');" class="bg-sky-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-sky-700 cursor-pointer">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Activity 3 -->
+    <div id="modal3" class="fixed inset-0 bg-black/50 hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl">
+            <div class="flex justify-between items-center mb-4 border-b pb-3">
+                <h3 class="text-xl font-bold text-amber-900"><i class="fas fa-users mr-2"></i>Activity 3: Mediador Cultural</h3>
+                <button onclick="closeModal('modal3')" class="text-slate-400 hover:text-slate-700 text-xl font-bold cursor-pointer">&times;</button>
+            </div>
+            <p class="text-sm text-slate-600 mb-4"><strong>Situación:</strong> Un compañero extranjero se siente presionado por un estilo de comunicación demasiado directo en el equipo.</p>
+            <label class="block text-xs font-bold text-slate-700 mb-2">Selecciona la mejor respuesta empática y asertiva:</label>
+            <div class="space-y-2 mb-6 text-sm">
+                <label class="block p-3 border rounded-xl hover:bg-amber-50 cursor-pointer">
+                    <input type="radio" name="roleplay" class="mr-2"> "You must finish this right now without excuses."
+                </label>
+                <label class="block p-3 border rounded-xl hover:bg-amber-50 cursor-pointer">
+                    <input type="radio" name="roleplay" class="mr-2"> "Could we perhaps review the timeline together when you have a moment?"
+                </label>
+            </div>
+            <div class="flex justify-end space-x-2">
+                <button onclick="closeModal('modal3'); alert('¡Excelente elección de mediación! Empatía y clima de equipo mejorados.');" class="bg-amber-600 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-amber-700 cursor-pointer">Verificar Decisión</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script para controlar los modales -->
     <script>
-        function openActivity1() {
-            alert("¡Bienvenido a Activity 1: Cazador de Estereotipos!\n\nAquí analizarás campañas publicitarias reales para identificar sesgos de género o raza y reescribirlas de forma inclusiva.");
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+            document.getElementById(modalId).classList.add('flex');
         }
-        function openActivity2() {
-            alert("¡Bienvenido a Activity 2: Acentos Globales!\n\nExplorando el mapa auditivo para escuchar hablantes no nativos y responder preguntas de comprensión contextual.");
-        }
-        function openActivity3() {
-            alert("¡Bienvenido a Activity 3: Mediador Cultural!\n\nIniciando simulación de diálogo internacional. Tus decisiones de cortesía afectarán el clima del equipo.");
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('flex');
+            document.getElementById(modalId).classList.add('hidden');
         }
     </script>
 </body>
